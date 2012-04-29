@@ -10,7 +10,8 @@
     <AppDesignerFolder>Properties\SCSharp.dll</AppDesignerFolder>
     <RootNamespace>SCSharp</RootNamespace>
     <AssemblyName>SCSharp</AssemblyName>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

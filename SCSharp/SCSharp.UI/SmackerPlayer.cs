@@ -28,6 +28,7 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
+using System.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -95,14 +96,17 @@ namespace SCSharp.UI
 
 				if (surf == null) {
 					surf = GuiUtil.CreateSurface (rgbData, (ushort)file.Header.Width, (ushort)file.Header.Height,
-								      32, (int)file.Header.Width * 4,
+								      24, (int)file.Header.Width * 3,
 								      (int)0x00ff0000,
 								      (int)0x0000ff00,
 								      (int)0x000000ff,
-								      unchecked ((int)0xff000000));
+								      0);
+
+                    surf.TransparentColor = Color.Black;
+                    surf.Transparent = true;
 				}
 				else {
-					surf.Lock();
+					surf.Lock();                    
 					Marshal.Copy(rgbData, 0, surf.Pixels, rgbData.Length);
 					surf.Unlock();
 					surf.Update();
@@ -124,7 +128,7 @@ namespace SCSharp.UI
 				{
 					try {
 						decoder.ReadNextFrame();
-						frameQueue.Enqueue(decoder.ARGBData);
+						frameQueue.Enqueue(decoder.RGBData);
 						if (frameQueue.Count >= buffered_frames)
 							waitEvent.WaitOne ();
 					}

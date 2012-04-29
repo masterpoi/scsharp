@@ -288,7 +288,7 @@ namespace SCSharp.UI
 
 		public static void DrawBox (Rectangle rect, Color color)
 		{
-// newsdl			paintingSurface.DrawBox (rect, color);
+            paintingSurface.Draw(new SdlDotNet.Graphics.Primitives.Box(rect.Location, rect.Size), color);
 		}
 
 		static Rectangle dirty = Rectangle.Empty;

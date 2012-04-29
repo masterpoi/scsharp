@@ -172,7 +172,7 @@ namespace SCSharp.UI
 
 			Surface surf = new Surface (text_width, text_height);
 			surf.TransparentColor = Color.Black;
-
+            
 			/* the draw it */
 			x = y = 0;
 			for (i = 0; i < r.Length; i ++) {
@@ -188,6 +188,7 @@ namespace SCSharp.UI
 						glyph_width = g.Width + g.XOffset;
 
 						Surface gs = RenderGlyph (font, g, palette, offset);
+                        
 						surf.Blit (gs, new Point (x, y + g.YOffset));
 					}
 				}

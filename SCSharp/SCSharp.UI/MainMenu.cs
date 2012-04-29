@@ -114,7 +114,7 @@ namespace SCSharp.UI
 				};
 
 			Elements[MULTIPLAYER_ELEMENT_INDEX].Activate +=
-				delegate () {
+				delegate (){ 
 					if (Game.Instance.IsBroodWar) {
 						ShowGameModeDialog (UIScreenType.Connection);
 					}

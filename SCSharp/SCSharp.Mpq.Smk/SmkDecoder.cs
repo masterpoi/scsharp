@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.IO;
 using System.Collections.Generic;
 using System.Text;
@@ -591,7 +592,7 @@ namespace SCSharp.Smk
         }
 
         /// <summary>
-        /// Returns the video data as RGB data
+        /// Returns the video data as ARGB data
         /// </summary>
         public byte[] ARGBData
         {
@@ -609,12 +610,14 @@ namespace SCSharp.Smk
 					if (result[j + 1] != 0 || result[j + 2] != 0 || result[j + 3] != 0)
 						result[j + 0] = 255;
                 }
+
+                
                 return result;
             }
         }
 
         /// <summary>
-        /// Returns the video data as BGRA data
+        /// Returns the video data as RGB data
         /// </summary>
         public byte[] RGBData
         {

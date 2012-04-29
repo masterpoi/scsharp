@@ -32,7 +32,7 @@ using System;
 using System.IO;
 using System.Text;
 using System.Threading;
-
+using System.Runtime.InteropServices;
 using SdlDotNet.Core;
 using SdlDotNet.Graphics;
 using SdlDotNet.Input;
@@ -127,9 +127,11 @@ namespace SCSharp.UI
 		{
 			if (Visible)
 				Painter.Invalidate (Bounds);
-			
-			if (Surface != null)
-				Surface.Fill (Color.Transparent);
+
+            if (Surface != null)
+            {
+                Surface.Fill(Color.Transparent);               
+            }
 		}
 		
 		protected override Surface CreateSurface ()
@@ -141,6 +143,7 @@ namespace SCSharp.UI
 			Surface surf;
 
 			surf = new Surface (player.Surface);
+            surf.AlphaBlending = true;
 
 			if (scale
 			    && (player.Width != Width
@@ -173,6 +176,10 @@ namespace SCSharp.UI
 		void PlayerFrameReady ()
 		{
 			Invalidate ();
+            
+            Surface.Blit(player.Surface,player.Surface.ClipRectangle, player.Surface.ClipRectangle);
+
+            
 		}
 	}
 

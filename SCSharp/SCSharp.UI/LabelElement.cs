@@ -84,6 +84,7 @@ namespace SCSharp.UI
 				surf.Blit (textSurf, new Point (x, 0));
 
 				surf.TransparentColor = Color.Black /* XXX */;
+                surf.Transparent = true;
 				return surf;
 			}
 		}

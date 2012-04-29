@@ -77,7 +77,7 @@ namespace SCSharp.UI
 			Surface surf = new Surface (Width, Height);
 
 			surf.TransparentColor = Color.Black; /* XXX */
-
+            surf.Transparent = true;
 			text_surf = null;
 			CalculateTextPosition ();
 

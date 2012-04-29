@@ -115,11 +115,11 @@ namespace SCSharp.UI
 		{
 			Painter.Painting += FirstPaint;
 
-			if (background != null)
-				Painter.Add (Layer.Background, BackgroundPainter);
+            if (background != null)
+                Painter.Add(Layer.Background, BackgroundPainter);
 
-			if (UIPainter != null)
-				Painter.Add (Layer.UI, UIPainter.Paint);
+            if (UIPainter != null)
+                Painter.Add(Layer.UI, UIPainter.Paint);
 
 			if (Cursor != null)
 				Game.Instance.Cursor = Cursor;
@@ -131,10 +131,10 @@ namespace SCSharp.UI
 		{
 			Painter.Painting -= FirstPaint;
 
-			if (background != null)
-				Painter.Remove (Layer.Background, BackgroundPainter);
-			if (UIPainter != null)
-				Painter.Remove (Layer.UI, UIPainter.Paint);
+            if (background != null)
+                Painter.Remove(Layer.Background, BackgroundPainter);
+            if (UIPainter != null)
+                Painter.Remove(Layer.UI, UIPainter.Paint);
 			if (Cursor != null)
 				Game.Instance.Cursor = null;
 		}

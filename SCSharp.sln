@@ -1,11 +1,11 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 9.00
-# Visual Studio 2005
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 11
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCSharp", "SCSharp.csproj", "{9D64B7CE-59CC-4662-BF97-89DC03C3697C}"
 	ProjectSection(ProjectDependencies) = postProject
-		{A723BC2F-13F1-4055-BBED-48DE99D6259B} = {A723BC2F-13F1-4055-BBED-48DE99D6259B}
-		{74F6BCDE-F12B-4699-9E68-9E36621E35CE} = {74F6BCDE-F12B-4699-9E68-9E36621E35CE}
 		{705B65E8-C871-4A6B-B42E-D6D538CEA13D} = {705B65E8-C871-4A6B-B42E-D6D538CEA13D}
+		{74F6BCDE-F12B-4699-9E68-9E36621E35CE} = {74F6BCDE-F12B-4699-9E68-9E36621E35CE}
+		{A723BC2F-13F1-4055-BBED-48DE99D6259B} = {A723BC2F-13F1-4055-BBED-48DE99D6259B}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCSharp.Smk.dll", "SCSharp\SCSharp.Smk.dll.csproj", "{74F6BCDE-F12B-4699-9E68-9E36621E35CE}"
@@ -37,10 +37,10 @@ Global
 		{A723BC2F-13F1-4055-BBED-48DE99D6259B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A723BC2F-13F1-4055-BBED-48DE99D6259B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = SCSharp.csproj
-	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = SCSharp.csproj
 	EndGlobalSection
 EndGlobal

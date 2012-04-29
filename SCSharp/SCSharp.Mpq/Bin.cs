@@ -62,7 +62,7 @@ namespace SCSharp
 		CenterTextHoriz   = 0x00200000,
 		RightAlignText    = 0x00400000,
 		CenterTextVert    = 0x00800000,
-		Unused01000000    = 0x01000000,
+		TopAlignText      = 0x01000000,
 		BottomAlignText   = 0x02000000,
 		NoClickSound      = 0x04000000,
 		Unused08000000    = 0x08000000,
@@ -101,7 +101,7 @@ namespace SCSharp
 		public ushort width;
 		public ushort height;
 
-		public byte hotkey;
+		public char hotkey;
 		public string text;
 		public uint text_offset;
 
@@ -130,7 +130,7 @@ namespace SCSharp
 				text = Encoding.ASCII.GetString (buf, (int)text_offset, (int)text_length);
 
 				if ((flags & ElementFlags.HasHotkey) == ElementFlags.HasHotkey) {
-					hotkey = Encoding.ASCII.GetBytes (new char[] {text[0]})[0];
+					hotkey = text[0];
 					text = text.Substring (1);
 				}
 			}

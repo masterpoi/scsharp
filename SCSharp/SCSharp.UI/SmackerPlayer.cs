@@ -33,7 +33,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Threading;
-using SdlDotNet;
+using SdlDotNet.Core;
+using SdlDotNet.Graphics;
+
 using System.Drawing;
 
 using SCSharp.Smk;
@@ -122,7 +124,7 @@ namespace SCSharp.UI
 				{
 					try {
 						decoder.ReadNextFrame();
-						frameQueue.Enqueue(decoder.BGRAData);
+						frameQueue.Enqueue(decoder.ARGBData);
 						if (frameQueue.Count >= buffered_frames)
 							waitEvent.WaitOne ();
 					}
